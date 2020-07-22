@@ -1,5 +1,6 @@
 import cv2 ,time
 
+#Imports classifiers
 face_cascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 smile_cascade=cv2.CascadeClassifier("smile.xml")
 
@@ -15,9 +16,10 @@ while True:
         for x,y,w,h in smile:
             img=cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),3)
 
-    cv2.imshow('gotcha',frame)
+    cv2.imshow('Result',frame)
     key=cv2.waitKey(1)
-
+    
+    #Press q to quit
     if key==ord('q'):
          break
 
